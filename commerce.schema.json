@@ -3,18 +3,19 @@
   "type": "object",
   "properties": {
     "name": {
-      "title": "Function Name",
-      "description": "Name given to the function by the developer.",
+      "title": "Function Name.",
+      "description": "Type string - Name given to the function by the developer.",
       "type": "string"
     },
     "variableName": {
-      "title": "Function Variable Name",
-      "description": "Variable Name given to the function by the developer. No blank spaces.",
+      "title": "Function Variable Name.",
+      "description": "Type string - Variable Name given to the function by the developer. No blank spaces.",
       "type": "string",
       "pattern": "([a-zA-Z]+)"
     },
     "libraryFunctions": {
-      "description": "Function variable names to be imported.",
+      "title": "Libraries to import.",
+      "description": "Type array(string) - Function variable names to be imported.",
       "type": "array",
       "items": {
         "type": "string"
@@ -22,26 +23,26 @@
       "uniqueItems": true
     },
     "returnType": {
-      "title": "Function return type",
-      "description": "Function return type.",
+      "title": "Function return type.",
+      "description": "Type string(Json|Integer|String|Float|JsonArray) - Function return type.",
       "type": "string",
       "pattern": "(Json|Integer|String)"
     },
     "parameters": {
-      "title": "Function parameters",
-      "description": "Parameters this function is going to receive.",
+      "title": "Function parameters.",
+      "description": "Type array(objects) - Parameters this function is going to receive.",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "name": {
-            "title": "Variable name",
-            "description": "Variable name to use within the script.",
+            "title": "Variable name.",
+            "description": "Type string - Variable name to use within the script.",
             "type": "string"
           },
           "type": {
-            "title": "Function return type",
-            "description": "Function return type.",
+            "title": "Variable type.",
+            "description": "Type string(Json|Integer|String|Float|JsonArray) - Variable type.",
             "type": "string",
             "pattern": "(Json|Integer|String)"
           }
@@ -52,7 +53,7 @@
     },
     "subDocAttributes": {
       "title": "Line level attributes.",
-      "description": "Quote line level atttributes to import.",
+      "description": "Type array(string) - Quote line level atttributes to import.",
       "type": "array",
       "items": {
         "type": "string"
@@ -61,7 +62,7 @@
     },
     "mainDocAttributes" : {
       "title": "Quote level attributes.",
-      "description": "Quote header level atttributes to import.",
+      "description": "Type array(string) - Quote header level atttributes to import.",
       "type": "array",
       "items": {
         "type": "string"
@@ -70,7 +71,7 @@
     },
     "systemAttributes" : {
       "title": "System level attributes.",
-      "description": "System level atttributes to import.",
+      "description": "Type array(string) - System level atttributes to import.",
       "type": "array",
       "items": {
         "type": "string"
