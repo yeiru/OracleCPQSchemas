@@ -1,0 +1,81 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Function Name",
+      "description": "Name given to the function by the developer.",
+      "type": "string"
+    },
+    "variableName": {
+      "title": "Function Variable Name",
+      "description": "Variable Name given to the function by the developer. No blank spaces.",
+      "type": "string",
+      "pattern": "([a-zA-Z]+)"
+    },
+    "libraryFunctions": {
+      "description": "Function variable names to be imported.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "returnType": {
+      "title": "Function return type",
+      "description": "Function return type.",
+      "type": "string",
+      "pattern": "(Json|Integer|String)"
+    },
+    "parameters": {
+      "title": "Function parameters",
+      "description": "Parameters this function is going to receive.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Variable name",
+            "description": "Variable name to use within the script.",
+            "type": "string"
+          },
+          "type": {
+            "title": "Function return type",
+            "description": "Function return type.",
+            "type": "string",
+            "pattern": "(Json|Integer|String)"
+          }
+        },
+        "required": ["name", "type"]
+      },
+      "uniqueItems": true
+    },
+    "subDocAttributes": {
+      "title": "Line level attributes.",
+      "description": "Quote line level atttributes to import.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "mainDocAttributes" : {
+      "title": "Quote level attributes.",
+      "description": "Quote header level atttributes to import.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "systemAttributes" : {
+      "title": "System level attributes.",
+      "description": "System level atttributes to import.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": ["name", "variableName", "returnType"]
+}
